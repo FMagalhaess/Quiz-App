@@ -26,11 +26,10 @@ function clicou(){
 
 
 var perguntas = [
-    {
-        pergunta: "Qual o nome do pai do naruto?",
-        certa: 'Minato',
+    {pergunta: "Qual o nome do pai do naruto?",
+        certa:   'Minato',
         errada1: "Kakashi",
-        errada2:"Nimato"
+        errada2: "Nimato"
     }
 ]
 var pergunta = document.getElementById("pergunta")
