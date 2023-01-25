@@ -8,22 +8,44 @@ window.onload = function (){
     // var pergunta = document.getElementById("pergunta")
     // pergunta.innerHTML = ''
 }
-function clicou(ny){
+function nextQuestion(){
+var options = document.getElementsByName('options')
+alert (options[0].checked)
+alert(options[0].value)
+options[0].value = 'asda'
+alert(options[0].value)
+}
+
+function clicou(){
     var pergunta = document.getElementById("pergunta")
     var slot1 = document.getElementById("resposta1")
     var resposta2 = document.getElementById("resposta2")
     var slot3 = document.getElementById("resposta3")
+    var options = document.getElementsByName('options')
+    var footer1 = document.getElementById('footer1')
+    var menu = document.getElementById('menu')
+    var footer = document.getElementById('footer')
+
     pergunta.innerHTML = ""
     slot1.innerHTML = ""
     resposta2.innerHTML = ""
     slot3.innerHTML = ""
-    pergunta.innerHTML = perguntas[ny].pergunta
-    slot1.innerHTML = perguntas[ny].certa
-    resposta2.innerHTML = perguntas[ny].errada1
-    slot3.innerHTML = perguntas[ny].errada2
+    pergunta.value = perguntas[0].pergunta
+    slot1.setAttribute('value', 'asda')
+    resposta2.value = perguntas[0].errada1
+    slot3.value = perguntas[0].errada2
+    pergunta.innerHTML = perguntas[0].pergunta
+    slot1.innerHTML = perguntas[0].certa
+    resposta2.innerHTML = perguntas[0].errada1
+    slot3.innerHTML = perguntas[0].errada2
+    footer1.hidden = false
+    footer.hidden = false
+    menu.hidden = true
+    options[0].hidden = false
+    options[1].hidden = false
+    options[2].hidden = false
 
 }
-var count = 0
 
 
 

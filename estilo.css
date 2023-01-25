@@ -22,6 +22,12 @@ section{
     vertical-align: middle;
     
 }
+menu{
+    margin-right: 50px;
+    text-align: center;
+    justify-items: center;
+    align-content: center;
+}
 header1{
     /* background-color: blue; */
     border-top-left-radius : 10px;
