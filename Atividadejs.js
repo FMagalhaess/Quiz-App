@@ -1,3 +1,7 @@
+function changeQuestions(){
+    
+}
+
 
 window.onload = function () {
     // var pergunta = document.getElementById("pergunta")
@@ -10,6 +14,12 @@ function nextQuestion() {
     var resposta2 = document.getElementById("resposta2")
     var slot3 = document.getElementById("resposta3")
     var options = document.getElementsByName('options')
+    if(options[0].checked){
+        if(options[0].value == perguntas[i].certa){
+            points = points +1
+        }
+    }
+    alert(points)
         options[0].value = perguntas[i].option1
         options[1].value = perguntas[i].option2
         options[2].value = perguntas[i].option3
@@ -17,14 +27,8 @@ function nextQuestion() {
         slot1.innerHTML = perguntas[i].option1
         resposta2.innerHTML = perguntas[i].option2
         slot3.innerHTML = perguntas[i].option3
-        alert(options[0].value)
         alert(perguntas[i].certa)
-        // if(options[0].checked){
-        //     if(options[0].value == perguntas[i].certa){
-        //         alert('acertou')
-        //     }
-        //     i = i+1
-        // }
+        i = i+1
 }
 
 function clicou() {
@@ -36,7 +40,11 @@ function clicou() {
     var footer1 = document.getElementById('footer1')
     var menu = document.getElementById('menu')
     var footer = document.getElementById('footer')
+    options[0].value = perguntas[i].option1
+        options[1].value = perguntas[i].option2
+        options[2].value = perguntas[i].option3
 
+    alert(options[0].value)
     pergunta.innerHTML = ""
     slot1.innerHTML = ""
     resposta2.innerHTML = ""
@@ -53,8 +61,8 @@ function clicou() {
     options[2].hidden = false
 
 }
-var i = 1
-
+var i = 0
+var points = 0
 var perguntas = [
     {
         pergunta: "Qual o nome do pai do naruto?",
