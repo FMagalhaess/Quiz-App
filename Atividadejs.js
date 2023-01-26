@@ -1,22 +1,33 @@
-function question(pergunta, certa, errada1, errada2){
-    this.pergunta = pergunta
-    this.certa = certa
-    this.errada1 = errada1 
-    this.errada2 = errada2
-}
-window.onload = function (){
+
+window.onload = function () {
     // var pergunta = document.getElementById("pergunta")
     // pergunta.innerHTML = ''
 }
-function nextQuestion(){
-var options = document.getElementsByName('options')
-alert (options[0].checked)
-alert(options[0].value)
-options[0].value = 'asda'
-alert(options[0].value)
+function nextQuestion() {
+
+    var pergunta = document.getElementById("pergunta")
+    var slot1 = document.getElementById("resposta1")
+    var resposta2 = document.getElementById("resposta2")
+    var slot3 = document.getElementById("resposta3")
+    var options = document.getElementsByName('options')
+        options[0].value = perguntas[i].option1
+        options[1].value = perguntas[i].option2
+        options[2].value = perguntas[i].option3
+        pergunta.innerHTML = perguntas[i].pergunta
+        slot1.innerHTML = perguntas[i].option1
+        resposta2.innerHTML = perguntas[i].option2
+        slot3.innerHTML = perguntas[i].option3
+        alert(options[0].value)
+        alert(perguntas[i].certa)
+        // if(options[0].checked){
+        //     if(options[0].value == perguntas[i].certa){
+        //         alert('acertou')
+        //     }
+        //     i = i+1
+        // }
 }
 
-function clicou(){
+function clicou() {
     var pergunta = document.getElementById("pergunta")
     var slot1 = document.getElementById("resposta1")
     var resposta2 = document.getElementById("resposta2")
@@ -30,14 +41,10 @@ function clicou(){
     slot1.innerHTML = ""
     resposta2.innerHTML = ""
     slot3.innerHTML = ""
-    pergunta.value = perguntas[0].pergunta
-    slot1.setAttribute('value', 'asda')
-    resposta2.value = perguntas[0].errada1
-    slot3.value = perguntas[0].errada2
     pergunta.innerHTML = perguntas[0].pergunta
-    slot1.innerHTML = perguntas[0].certa
-    resposta2.innerHTML = perguntas[0].errada1
-    slot3.innerHTML = perguntas[0].errada2
+    slot1.innerHTML = perguntas[0].option1
+    resposta2.innerHTML = perguntas[0].option2
+    slot3.innerHTML = perguntas[0].option3
     footer1.hidden = false
     footer.hidden = false
     menu.hidden = true
@@ -46,25 +53,32 @@ function clicou(){
     options[2].hidden = false
 
 }
-
-
+var i = 1
 
 var perguntas = [
-    {pergunta: "Qual o nome do pai do naruto?",
-        certa:   'Minato',
-        errada1: "Kakashi",
-        errada2: "Nimato"
-    },{pergunta: 'Qual o nome da esposa do Naruto?',
-        certa: 'Hinata',
-        errada1: 'Sakura',
-        errada2: 'Ino',
+    {
+        pergunta: "Qual o nome do pai do naruto?",
+        option1: 'Minato',
+        option2: "Kakashi",
+        option3: "Nimato",
+        certa: "Minato"
+    }, {
+        pergunta: 'Qual o nome da esposa do Naruto?',
+        option1: 'Hinata',
+        option2: 'Sakura',
+        option3: 'Ino',
+        certa: "Hinata"
 
-    },{pergunta: 'Qual o Jutso assinatura do Naruto',
-    certa: 'Rasengan',
-    errada1: 'Chidori',
-    errada2: 'Oito portões',
 
-}
+    }, {
+        pergunta: 'Qual o Jutso assinatura do Naruto',
+        option1: 'Rasengan',
+        option2: 'Chidori',
+        option3: 'Oito portões',
+        certa: "Rasengan"
+
+
+    }
 ]
 var pergunta = document.getElementById("pergunta")
-    pergunta.innerHTML = 'dale'
+pergunta.innerHTML = 'dale'
