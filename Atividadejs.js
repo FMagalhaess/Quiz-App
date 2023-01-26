@@ -1,5 +1,17 @@
 function changeQuestions(){
-    
+    var pergunta = document.getElementById("pergunta")
+    var slot1 = document.getElementById("resposta1")
+    var resposta2 = document.getElementById("resposta2")
+    var slot3 = document.getElementById("resposta3")
+    var options = document.getElementsByName('options')
+    options[0].value = perguntas[i].option1
+        options[1].value = perguntas[i].option2
+        options[2].value = perguntas[i].option3
+        pergunta.innerHTML = perguntas[i].pergunta
+        slot1.innerHTML = perguntas[i].option1
+        resposta2.innerHTML = perguntas[i].option2
+        slot3.innerHTML = perguntas[i].option3
+        i = i+1
 }
 
 
