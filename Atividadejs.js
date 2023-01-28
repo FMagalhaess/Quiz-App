@@ -1,49 +1,37 @@
-function changeQuestions(){
-    var pergunta = document.getElementById("pergunta")
-    var slot1 = document.getElementById("resposta1")
-    var resposta2 = document.getElementById("resposta2")
-    var slot3 = document.getElementById("resposta3")
-    var options = document.getElementsByName('options')
-    options[0].value = perguntas[i].option1
-        options[1].value = perguntas[i].option2
-        options[2].value = perguntas[i].option3
-        pergunta.innerHTML = perguntas[i].pergunta
-        slot1.innerHTML = perguntas[i].option1
-        resposta2.innerHTML = perguntas[i].option2
-        slot3.innerHTML = perguntas[i].option3
-        i = i+1
-}
-
-
-window.onload = function () {
-    // var pergunta = document.getElementById("pergunta")
-    // pergunta.innerHTML = ''
-}
-function nextQuestion() {
-
-    var pergunta = document.getElementById("pergunta")
-    var slot1 = document.getElementById("resposta1")
-    var resposta2 = document.getElementById("resposta2")
-    var slot3 = document.getElementById("resposta3")
-    var options = document.getElementsByName('options')
-    if(options[0].checked){
-        if(options[0].value == perguntas[i].certa){
-            points = points +1
+function rightAnsewr() {
+    if (options[0].checked) {
+        if (options[0].value == perguntas[i].certa) {
+            points++
+            alert(points)
+        } else if (options[1].checked) {
+            if (options[1].value == perguntas[i].certa) {
+                points++
+                alert(points)
+            }
+        } else if (options[2].checked) {
+            if (options[2].value == perguntas[i].certa) {
+                points = points + 1
+                alert(points)
+            }
         }
     }
-    alert(points)
-        options[0].value = perguntas[i].option1
-        options[1].value = perguntas[i].option2
-        options[2].value = perguntas[i].option3
-        pergunta.innerHTML = perguntas[i].pergunta
-        slot1.innerHTML = perguntas[i].option1
-        resposta2.innerHTML = perguntas[i].option2
-        slot3.innerHTML = perguntas[i].option3
-        alert(perguntas[i].certa)
-        i = i+1
 }
-
-function clicou() {
+function whichChecked(){
+    
+    var options = document.getElementsByName('options')
+    for(var idx = 0; idx <3; idx++){
+        if(options[idx].checked){
+            checkBoxEmpty = false
+            if (options[idx].value == perguntas[i].certa) {
+                points++
+                alert(points)
+            }
+            break
+            // return idx
+        } 
+    }
+}
+function changeQuestions() {
     var pergunta = document.getElementById("pergunta")
     var slot1 = document.getElementById("resposta1")
     var resposta2 = document.getElementById("resposta2")
@@ -52,29 +40,101 @@ function clicou() {
     var footer1 = document.getElementById('footer1')
     var menu = document.getElementById('menu')
     var footer = document.getElementById('footer')
-    options[0].value = perguntas[i].option1
+    if (!changeHidden) {
+        footer1.hidden = false
+        footer.hidden = false
+        menu.hidden = true
+        options[0].hidden = false
+        options[1].hidden = false
+        options[2].hidden = false
+        options[0].value = perguntas[i].option1
         options[1].value = perguntas[i].option2
         options[2].value = perguntas[i].option3
+        pergunta.innerHTML = perguntas[i].pergunta
+        slot1.innerHTML = perguntas[i].option1
+        resposta2.innerHTML = perguntas[i].option2
+        slot3.innerHTML = perguntas[i].option3
+        // alert(`${options[0].value},${options[1].value},${options[2].value}, certa ${perguntas[i].certa}`)
+        changeHidden = true
+    } else {
+        whichChecked()
+    if(!checkBoxEmpty){
+        i++
+        pergunta.innerHTML = perguntas[i].pergunta
+        slot1.innerHTML = perguntas[i].option1
+        resposta2.innerHTML = perguntas[i].option2
+        slot3.innerHTML = perguntas[i].option3
+        options[0].value = perguntas[i].option1
+        options[1].value = perguntas[i].option2
+        options[2].value = perguntas[i].option3
+        // alert(`${options[0].value},${options[1].value},${options[2].value}, certa ${perguntas[i].certa}`)
+        options[0].checked = false
+        options[1].checked = false
+        options[2].checked = false
+       
+    } else{
+        alert(`Marque uma opcão`)
+    }
 
-    alert(options[0].value)
-    pergunta.innerHTML = ""
-    slot1.innerHTML = ""
-    resposta2.innerHTML = ""
-    slot3.innerHTML = ""
-    pergunta.innerHTML = perguntas[0].pergunta
-    slot1.innerHTML = perguntas[0].option1
-    resposta2.innerHTML = perguntas[0].option2
-    slot3.innerHTML = perguntas[0].option3
-    footer1.hidden = false
-    footer.hidden = false
-    menu.hidden = true
-    options[0].hidden = false
-    options[1].hidden = false
-    options[2].hidden = false
+    }
+}
+
+
+window.onload = function () {
+    // var pergunta = document.getElementById("pergunta")
+    // pergunta.innerHTML = ''
+}
+function nextQuestion() {
+    var pergunta = document.getElementById("pergunta")
+    var slot1 = document.getElementById("resposta1")
+    var resposta2 = document.getElementById("resposta2")
+    var slot3 = document.getElementById("resposta3")
+    var options = document.getElementsByName('options')
+
+    whichChecked()
+    if(!checkBoxEmpty){
+       
+    } else{
+        alert(`Marque uma opcão`)
+    }
 
 }
+
+
+
+// function clicou() {
+//     var pergunta = document.getElementById("pergunta")
+//     var slot1 = document.getElementById("resposta1")
+//     var resposta2 = document.getElementById("resposta2")
+//     var slot3 = document.getElementById("resposta3")
+//     var options = document.getElementsByName('options')
+//     var footer1 = document.getElementById('footer1')
+//     var menu = document.getElementById('menu')
+//     var footer = document.getElementById('footer')
+//     options[0].value = perguntas[i].option1
+//         options[1].value = perguntas[i].option2
+//         options[2].value = perguntas[i].option3
+
+//     pergunta.innerHTML = ""
+//     slot1.innerHTML = ""
+//     resposta2.innerHTML = ""
+//     slot3.innerHTML = ""
+//     pergunta.innerHTML = perguntas[0].pergunta
+//     slot1.innerHTML = perguntas[0].option1
+//     resposta2.innerHTML = perguntas[0].option2
+//     slot3.innerHTML = perguntas[0].option3
+//     footer1.hidden = false
+//     footer.hidden = false
+//     menu.hidden = true
+//     options[0].hidden = false
+//     options[1].hidden = false
+//     options[2].hidden = false
+
+// }
+var changeHidden = false
 var i = 0
 var points = 0
+var checkBoxEmpty = true
 var perguntas = [
     {
         pergunta: "Qual o nome do pai do naruto?",
@@ -84,16 +144,16 @@ var perguntas = [
         certa: "Minato"
     }, {
         pergunta: 'Qual o nome da esposa do Naruto?',
-        option1: 'Hinata',
-        option2: 'Sakura',
-        option3: 'Ino',
+        option1: 'Sakura',
+        option2: 'Ino',
+        option3: 'Hinata',
         certa: "Hinata"
 
 
     }, {
         pergunta: 'Qual o Jutso assinatura do Naruto',
-        option1: 'Rasengan',
-        option2: 'Chidori',
+        option1: 'Chidori',
+        option2: 'Rasengan',
         option3: 'Oito portões',
         certa: "Rasengan"
 
