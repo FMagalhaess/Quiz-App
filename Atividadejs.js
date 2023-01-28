@@ -61,7 +61,8 @@ function changeQuestions() {
         element[0].style.opacity = '1'
         element[1].style.opacity = '1'
         element[2].style.opacity = '1'
-
+        const foot = document.querySelector("#footer1")
+        foot.style.opacity = '1'
 
     } else {
         whichChecked()
