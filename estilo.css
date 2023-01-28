@@ -11,12 +11,19 @@ header{
     color: white;
     text-align: center;
 }
+#footer1{display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+}
 menu{
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 0;
+    padding-top: 20;
 }
 section{
     
@@ -51,7 +58,7 @@ section{
         align-items: center;
         justify-content: center;
 
-        opacity: 1;
+        opacity: 0;
     
 }
 .opt:before{
@@ -69,8 +76,9 @@ section{
 }
   
 .btn{
+    appearance: none;
     color: black;
-    background-color: aquamarine;
+    /* background-color: rgb(77, 94, 88); */
 }
 
 

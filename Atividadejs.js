@@ -30,6 +30,10 @@ function whichChecked(){
         } 
     }
 }
+window.onload = function () {
+    footer1.hidden = true
+}
+
 function changeQuestions() {
     var pergunta = document.getElementById("pergunta")
     var slot1 = document.getElementById("resposta1")
@@ -41,7 +45,6 @@ function changeQuestions() {
     var footer = document.getElementById('footer')
     if (!changeHidden) {
         footer1.hidden = false
-        // footer.hidden = false
         menu.hidden = true
         options[0].hidden = false
         options[1].hidden = false
@@ -74,7 +77,7 @@ function changeQuestions() {
         options[0].checked = false
         options[1].checked = false
         options[2].checked = false
-       
+        checkBoxEmpty = true
     } else{
         alert(`Marque uma opcão`)
     }
@@ -85,6 +88,7 @@ var changeHidden = false
 var i = 0
 var points = 0
 var checkBoxEmpty = true
+
 var perguntas = [
     {
         pergunta: "Qual o nome do pai do naruto?",
