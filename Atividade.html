@@ -18,37 +18,37 @@
         <header1 id="pergunta">
             <menu id="menu"  !hidden>
                 Comecar teste ?<br>
-                <input type="button" value="Comecar!" onclick="changeQuestions()">
+                <input type="button" value="Comecar!" style="cursor: pointer;" class="btn" onclick="changeQuestions()">
             </menu>
             
         </header1>
                 <firstanswer >
-                    <input type="radio" name="options" value="ada" hidden>
-                    <test1 id="resposta1">
-                        
-                    </test1>
+                    <input type="radio" name="options" value="ada" hidden class="opt" id="radio1">
+                    <label for="radio1" id="resposta1" class="option">
+
+                    </label>
                 </firstanswer>
                 <secondanswer >
-                    <input type="radio" name="options" value="" hidden>
-                    <test2 id="resposta2">
-    
-                    </test2>
+                    <input type="radio" name="options" value="" hidden class="opt" id="radio2">
+                    <label for="radio2 " id="resposta2" class="option">
+
+                    </label>
                 </secondanswer>
                 <thirdanswer >
-                    <input type="radio" name="options" value="" hidden>
-                    <test3 id="resposta3">
+                    <input type="radio" name="options" value="" hidden class="opt" id="radio3">
+                    <label for="radio3" id="resposta3" class="option">
 
-                    </test3>
+                    </label>
                 </thirdanswer>
                 <footer1 id="footer1" hidden>
-                    Enviar resposta <input type="Button" value="Enviar" onclick="changeQuestions()">
+                    Enviar resposta <input type="Button" style="cursor: pointer;" class="btn" value="Enviar" onclick="changeQuestions()" id="Send">
                 </footer1>
     </section>
     <script>
        
     </script>    
     <footer>
-        <p><input type="button" value="Proxima pergunta" onclick="nextQuestion()" hidden id="footer"></p>
+        <p><input type="" value="Proxima pergunta" onclick="nextQuestion()" hidden id="footer"></p>
     </footer>
 </body>
 </html>

@@ -27,7 +27,6 @@ function whichChecked(){
                 alert(points)
             }
             break
-            // return idx
         } 
     }
 }
@@ -42,7 +41,7 @@ function changeQuestions() {
     var footer = document.getElementById('footer')
     if (!changeHidden) {
         footer1.hidden = false
-        footer.hidden = false
+        // footer.hidden = false
         menu.hidden = true
         options[0].hidden = false
         options[1].hidden = false
@@ -54,8 +53,13 @@ function changeQuestions() {
         slot1.innerHTML = perguntas[i].option1
         resposta2.innerHTML = perguntas[i].option2
         slot3.innerHTML = perguntas[i].option3
-        // alert(`${options[0].value},${options[1].value},${options[2].value}, certa ${perguntas[i].certa}`)
         changeHidden = true
+        const element = document.querySelectorAll('.opt')
+        element[0].style.opacity = '1'
+        element[1].style.opacity = '1'
+        element[2].style.opacity = '1'
+
+
     } else {
         whichChecked()
     if(!checkBoxEmpty){
@@ -67,7 +71,6 @@ function changeQuestions() {
         options[0].value = perguntas[i].option1
         options[1].value = perguntas[i].option2
         options[2].value = perguntas[i].option3
-        // alert(`${options[0].value},${options[1].value},${options[2].value}, certa ${perguntas[i].certa}`)
         options[0].checked = false
         options[1].checked = false
         options[2].checked = false
@@ -78,59 +81,6 @@ function changeQuestions() {
 
     }
 }
-
-
-window.onload = function () {
-    // var pergunta = document.getElementById("pergunta")
-    // pergunta.innerHTML = ''
-}
-function nextQuestion() {
-    var pergunta = document.getElementById("pergunta")
-    var slot1 = document.getElementById("resposta1")
-    var resposta2 = document.getElementById("resposta2")
-    var slot3 = document.getElementById("resposta3")
-    var options = document.getElementsByName('options')
-
-    whichChecked()
-    if(!checkBoxEmpty){
-       
-    } else{
-        alert(`Marque uma opcão`)
-    }
-
-}
-
-
-
-// function clicou() {
-//     var pergunta = document.getElementById("pergunta")
-//     var slot1 = document.getElementById("resposta1")
-//     var resposta2 = document.getElementById("resposta2")
-//     var slot3 = document.getElementById("resposta3")
-//     var options = document.getElementsByName('options')
-//     var footer1 = document.getElementById('footer1')
-//     var menu = document.getElementById('menu')
-//     var footer = document.getElementById('footer')
-//     options[0].value = perguntas[i].option1
-//         options[1].value = perguntas[i].option2
-//         options[2].value = perguntas[i].option3
-
-//     pergunta.innerHTML = ""
-//     slot1.innerHTML = ""
-//     resposta2.innerHTML = ""
-//     slot3.innerHTML = ""
-//     pergunta.innerHTML = perguntas[0].pergunta
-//     slot1.innerHTML = perguntas[0].option1
-//     resposta2.innerHTML = perguntas[0].option2
-//     slot3.innerHTML = perguntas[0].option3
-//     footer1.hidden = false
-//     footer.hidden = false
-//     menu.hidden = true
-//     options[0].hidden = false
-//     options[1].hidden = false
-//     options[2].hidden = false
-
-// }
 var changeHidden = false
 var i = 0
 var points = 0

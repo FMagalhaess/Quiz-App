@@ -1,16 +1,28 @@
+*{
+    color: rgb(255, 255, 255);
+}
 body{
-    background: rgb(48, 48, 240);
+    background-image: url(../Quiz\ App/Images/NarutoWpp.jpg);
+    background-position: center;
+    /* background: rgb(234, 152, 40); */
     font: normal 15pt arial;
 }
 header{
     color: white;
     text-align: center;
 }
+menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
 section{
-    display: grid;
-    grid-template-rows: 5 100px;
-    grid-template-columns: 1;
-    background: white;
+    
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.24);
     border-radius: 10px;
     padding: 15px;
     width: 330px;
@@ -18,52 +30,53 @@ section{
     margin: auto;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     grid-gap: 1rem;
-    align-items: center;
-    vertical-align: middle;
+    align-items: left;
+    justify-content: space-around;
     
 }
-menu{
-    margin-right: 50px;
-    text-align: center;
-    justify-items: center;
-    align-content: center;
+.option{
+    cursor: pointer;
+    
 }
-header1{
-    /* background-color: blue; */
-    border-top-left-radius : 10px;
-    border-top-right-radius: 10px;
-    padding: 10px;
-    text-align: center;
+.opt{
+    cursor: pointer;
+    appearance: none;
+    border: 2px solid rgb(234, 152, 40);
+    /* background: rgb(234, 152, 40); */
+    color: black;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        opacity: 1;
+    
+}
+.opt:before{
+    content: '';
+    /* position: absolute; */
+    height: 8px;
+    width: 8px;
+    background: rgb(234, 152, 40);
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.opt:checked:before{
+    opacity: 1;
+}
+  
+.btn{
+    color: black;
+    background-color: aquamarine;
+}
+
+
+firstanswer, secondanswer,thirdanswer{
+    display: flex;
     align-items: center;
-    vertical-align: middle;
-    justify-items: center;
-}
-div{
-    background-color: aqua;
-}
-question{
-    display: grid;
-    grid-template-columns: 1fr,1fr;
-    grid-template-rows: 1fr,1fr;
-    /* background-color: black; */
-}
-firstanswer{
     /* background-color: green; */
     padding: 10px;
-}
-secondanswer{
-    /* background-color: gold; */
-    padding: 10px;
-}
-thirdanswer{
-    /* background-color: red; */
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding: 10px;
-}
-
-
-footer{
-    color: white;
-    text-align: center;
 }
